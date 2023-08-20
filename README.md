@@ -24,10 +24,19 @@ Using Data Factory, we estabilish a *source* (the [raw files](https://github.com
 
 ### Transform
 
-After the data has been inserted into the first staging area, we will use Databricks to transform the data through cleaning and EDA. Databricks goes in this process with the use of notebooks that are also linked in this repository.
+After the data has been inserted into the first staging area, we will use Databricks to transform the data through cleaning and EDA. Databricks goes in this process with the use of a [notebook](https://github.com/leorickli/brazil-e-commerce-azure-databricks/blob/main/databricks_notebook.ipynb) that is also linked in this repository.
 
+The majority of the tables were already pretty decent in terms of cleaning, there were just some minor datatype changes for a better schema representation of the columns. There was one exception with the table "order_reviews", there were some problematic rows that were giving error messages when Synapse was trying to read it, those rows had double quotes in it, so I manage do delete all of those rows.
 
+Once the data is transformed, it is then sent to another staging area where it will be ingested by Synapse.
 
+### Load
+
+Data is now loaded into Synapse, we will make this data become relational by creating an ERD so we can query some answers from it.
+
+<img width="1004" alt="Screenshot 2023-08-19 at 23 14 45" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/89ee3547-e645-4dd0-8b0e-1b206a5d69bb">
+
+We can now query some anwser by using SQL.
 
 
 
