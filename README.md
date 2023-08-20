@@ -7,7 +7,7 @@ In this project, we will be using some ETL, analytics, and BI tools on Microsoft
 The Microsoft Azure platform was used to create the necessary infrastructure because I believe it offers a better connection with Databricks and Power Bi. The following Azure tools and others were used:
 
 - **Data Factory**: Used for the ingestion of the [raw files](https://github.com/leorickli/brazil-e-commerce-azure-databricks/tree/main/raw_files) that you can find in this repository. It will then send those raw files to a staging area in a data lake inside a Storage Account
-- **Data Lake Gen 2**: These will be the staging areas for the data. The first staging area will be the raw data that will be ingested by Databricks. The second staging area will be the transformed data by Databricks that will be ingested by Azure Synapse.
+- **Data Lake Gen 2**: These will be the staging areas for the data. The first staging area will be the *raw data* that will be ingested by Databricks. The second staging area will be the *transformed data* by Databricks that will be ingested by Azure Synapse.
 - **Databricks**: Used for data cleaning and some EDA (Exploratory Data Analysis). This section is important because it will make the correct schema for further data analysis on Synapse.
 - **Synapse**: This is the analytics tool offered by Azure. We can use the transformed data to make a relational database model and query data for analytics.
 - **Power Bi**: Used for presenting dashboards with the data that is the relational format.
