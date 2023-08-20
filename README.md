@@ -36,7 +36,9 @@ Data is now loaded into Synapse, we will make this data become relational by cre
 
 <img width="1004" alt="Screenshot 2023-08-19 at 23 14 45" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/89ee3547-e645-4dd0-8b0e-1b206a5d69bb">
 
-We can now query some anwser by using SQL.
+We can now query some anwsers using SQL.
+
+
 
 
 
