@@ -74,8 +74,12 @@ ORDER BY [average_price] DESC;
 
 ## Dashboards
 
+Before we start making our dashoboards, we have to estabilish a connection between Power Bi and Synapse. To do that, download Power Bi desktop and grab the "Serverless SQL endpoint" inside the resource group that you are using.
 
+![Screenshot 2023-08-20 141429](https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/4a261005-b94e-4a6c-a6fd-e1646c3d2af8)
 
+Now that we inserted our credentials in, we can start making some dashboards.
 
+![image](https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/bf0e264c-5f16-4f88-97c0-6741755e8435)
 
 
