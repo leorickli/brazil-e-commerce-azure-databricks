@@ -34,12 +34,45 @@ Once the data is transformed, it is then sent to another staging area where it w
 
 Data is now loaded into Synapse, we will make this data become relational by creating an ERD so we can query some answers from it.
 
-<img width="1004" alt="Screenshot 2023-08-19 at 23 14 45" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/89ee3547-e645-4dd0-8b0e-1b206a5d69bb">
+<img width="1079" alt="Screenshot 2023-08-20 at 11 05 55" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/9b22d2cc-22d6-46bd-ad3f-57418430e703">
 
 We can now query some anwsers using SQL.
 
+```
+-- checking the states that has the biggest amount of customers
+SELECT [customer_state], COUNT(*) AS [total]
+ FROM [ecommerceDB].[dbo].[customers]
+ GROUP BY [customer_state]
+ ORDER BY [total] DESC
+```
 
+<img width="282" alt="Screenshot 2023-08-20 at 11 25 13" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/3e47d600-7a97-4f4e-ae22-dfeb07ae1b14">
 
+```
+-- on the "order_payments" table, find the average payment of the payment type and the number of times it was used, from top to bottom
+SELECT [payment_type], COUNT(*) AS [total], ROUND(AVG([payment_value]),2) AS [average_payment]
+ FROM [ecommerceDB].[dbo].[order_payments]
+ WHERE [payment_type] != 'not_defined'
+ GROUP BY [payment_type]
+ ORDER BY [total] DESC
+```
+
+<img width="557" alt="Screenshot 2023-08-20 at 11 25 33" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/4234513b-250a-4a24-a501-b5bfaa810137">
+
+```
+-- for testing the joins: join the "order_paymets", "orders", "order_items", "products" tables and get the "order_status", "payment_type", average price in descending order and the "product_category_name"
+SELECT TOP (100) o.[order_status], op.[payment_type], AVG(oi.[price]) AS [average_price], p.[product_category_name]
+FROM [ecommerceDB].[dbo].[orders] o
+JOIN [ecommerceDB].[dbo].[order_payments] op ON o.[order_id] = op.[order_id]
+JOIN [ecommerceDB].[dbo].[order_items] oi ON o.[order_id] = oi.[order_id]
+JOIN [ecommerceDB].[dbo].[products] p ON oi.[product_id] = p.[product_id]
+GROUP BY o.[order_status], op.[payment_type], p.[product_category_name]
+ORDER BY [average_price] DESC;
+```
+
+<img width="822" alt="Screenshot 2023-08-20 at 11 28 22" src="https://github.com/leorickli/brazil-e-commerce-azure-databricks/assets/106999054/0129d3fb-1407-4fad-aef9-904c2cfb0fb0">
+
+## Dashboards
 
 
 
