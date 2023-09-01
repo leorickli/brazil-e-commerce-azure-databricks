@@ -12,7 +12,7 @@ The Microsoft Azure platform was used to create the necessary infrastructure bec
 - **Synapse**: This is the analytics tool offered by Azure. We can use the transformed data to make a relational database model and query data for analytics.
 - **Power Bi**: Used for presenting dashboards with the data that is the relational format.
 
-Using a fundamental processing method called ETL (Extract, Transform, and Load), we will extract the [raw files](https://github.com/leorickli/brazil-e-commerce-azure-databricks/tree/main/raw_files) from this repository, transform it to align with the tight schema constraints of a data warehouse and load it into a data warehouse for analysis and visualizations.
+Using a fundamental Data Engineering method called ETL (Extract, Transform, and Load), we will extract the [raw files](https://github.com/leorickli/brazil-e-commerce-azure-databricks/tree/main/raw_files) from this repository, transform it to align with the tight schema constraints of a data warehouse and load it into a data warehouse for analysis and visualizations.
 
 Before we start deploying the resources, it's important to create a unique resource group for this project.
 
